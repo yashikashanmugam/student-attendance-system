@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Attendance History</title>
+
+```
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial,sans-serif;
+    }
+
+    body{
+        background:#0a192f;
+        color:white;
+    }
+
+    .header{
+        background:#112240;
+        padding:20px;
+        text-align:center;
+        font-size:28px;
+        font-weight:bold;
+    }
+
+    .container{
+        width:90%;
+        margin:40px auto;
+    }
+
+    table{
+        width:100%;
+        border-collapse:collapse;
+        background:#112240;
+    }
+
+    th{
+        background:#1e90ff;
+        padding:15px;
+    }
+
+    td{
+        padding:15px;
+        text-align:center;
+        border-bottom:1px solid #233554;
+    }
+
+    .present{
+        color:#64ffda;
+        font-weight:bold;
+    }
+
+    .back-btn{
+        margin-top:20px;
+        padding:10px 20px;
+        background:#dc2626;
+        color:white;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+    }
+
+    .back-btn:hover{
+        background:#b91c1c;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="header">
+    Attendance History
+</div>
+
+<div class="container">
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Student name</th>
+                <th>Date</th>
+                <th>Attendance Time</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="historyBody">
+        </tbody>
+    </table>
+
+    <button class="back-btn"
+    onclick="window.location.href='login.html'">
+        Back To login
+    </button>
+
+</div>
+```
+
+<script>
+
+function formatDateTime(dateStr, timeStr){
+
+    let date = new Date(dateStr);
+
+    let day = String(date.getDate()).padStart(2,'0');
+    let month = String(date.getMonth()+1).padStart(2,'0');
+    let year = date.getFullYear();
+
+    let formattedDate =
+    `${day}/${month}/${year}`;
+
+    let [h,m,s] = timeStr.split(":");
+
+    let hour = parseInt(h);
+
+    let ampm =
+    hour >= 12 ? "PM" : "AM";
+
+    hour = hour % 12;
+
+    if(hour === 0){
+        hour = 12;
+    }
+
+    let formattedTime =
+    `${String(hour).padStart(2,'0')}:${m}:${s} ${ampm}`;
+
+    return {
+        date: formattedDate,
+        time: formattedTime
+    };
+}
+
+function loadHistory(){
+
+    fetch("http://localhost:3000/attendance")
+
+    .then(res => res.json())
+
+    .then(data => {
+
+        let tbody =
+        document.getElementById("historyBody");
+
+        tbody.innerHTML = "";
+
+        let sno = 1;
+
+        data.forEach(row => {
+
+            let result =
+            formatDateTime(
+                row.attendance_date,
+                row.attendance_time
+            );
+
+            tbody.innerHTML += `
+            <tr>
+                <td>${sno++}</td>
+                <td>${row.username}</td>
+                <td>${result.date}</td>
+                <td>${result.time}</td>
+                <td class="present">Present</td>
+            </tr>
+            `;
+        });
+
+    })
+
+    .catch(err => {
+        console.log(err);
+        alert("Failed to load attendance history");
+    });
+
+}
+
+loadHistory();
+
+</script>
+
+</body>
+</html>

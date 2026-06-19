@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mark Attendance</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#0a192f;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.container{
+    background:#112240;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    width:350px;
+}
+
+h2{
+    color:white;
+}
+
+p{
+    color:#ccd6f6;
+}
+
+button{
+    background:#1e90ff;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+#message{
+    margin-top:15px;
+    color:#64ffda;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Mark Attendance</h2>
+
+    <p>Click the button to mark attendance</p>
+
+    <button onclick="markAttendance()">
+        Mark Attendance
+    </button>
+
+    <div id="message"></div>
+
+</div>
+
+<script>
+
+function markAttendance(){
+
+    let student_id =
+    localStorage.getItem("student_id");
+
+    let username =
+    localStorage.getItem("username");
+
+    console.log("student_id =", student_id);
+    console.log("username =", username);
+
+    fetch("http://localhost:3000/attendance",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            student_id:student_id,
+            username:username
+        })
+    })
+
+    .then(res=>res.json())
+.then(data=>{
+
+    let msg =
+    document.getElementById("message");
+
+    if(data.success){
+
+        msg.style.color = "#64ffda";
+
+        msg.innerHTML =
+        "Attendance Marked Successfully";
+
+        setTimeout(() => {
+
+            window.location.href =
+            "attendance-history.html";
+
+        }, 1000);
+
+    }
+    else{
+
+        msg.style.color = "red";
+
+        msg.innerHTML =
+        data.message;
+
+    }
+
+})
+    .catch(err=>{
+        console.log(err);
+        alert("Server Error");
+    });
+
+}
+
+</script>
+
+</body>
+</html>
