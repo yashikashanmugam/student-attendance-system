@@ -36,8 +36,6 @@ db.connect((err) => {
 
 });
 
-
-// Login API
 app.post('/login', (req, res) => {
     let { username, password } = req.body;
     let sql = `SELECT * FROM students WHERE username =? AND password =?`;
@@ -145,7 +143,6 @@ app.delete('/reset-attendance',(req,res)=>{
 });
 
 
-// Login page load aagum
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'login.html'));
 });
