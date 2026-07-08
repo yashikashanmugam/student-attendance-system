@@ -107,8 +107,6 @@ http://localhost:3000
 
 ---
 
-## 🚀 Live Demo
-
 🔗 **Live Application**
 
 https://student-attendance-system-production-987f.up.railway.app
@@ -124,11 +122,6 @@ https://student-attendance-system-production-987f.up.railway.app
 * Search & Filter Attendance Records
 * Password Encryption
 * Role-Based Authentication
-
----
-
-Live demo
-🔗 Live Demo: https://student-attendance-system-production-987f.up.railway.app
 
 ## 👩‍💻 Author
 
