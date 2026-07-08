@@ -87,6 +87,9 @@ http://localhost:3000
 * Export Attendance Data
 * Search and Filter Options
 
+Live demo
+🔗 Live Demo: https://student-attendance-system-production-987f.up.railway.app
+
 ## 👩‍💻 Author
 
 Yashika
