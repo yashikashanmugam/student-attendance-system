@@ -1,38 +1,46 @@
-# Student Attendance System 🎓
+# 🎓 Student Attendance System
 
-A web-based Student Attendance System developed using HTML, CSS, JavaScript, Node.js, Express.js, and MySQL.
+A responsive web-based **Student Attendance System** built using **HTML, CSS, JavaScript, Node.js, Express.js, and MySQL**. This application enables students to securely log in, mark their attendance, and view attendance history through a clean and user-friendly interface.
+
+---
 
 ## 📌 Project Overview
 
-The Student Attendance System is designed to manage and record student attendance efficiently. Users can log in, mark attendance, and view attendance history through a simple and user-friendly interface.
+The Student Attendance System is designed to simplify attendance management by allowing authenticated users to record and track attendance digitally. The application provides a smooth workflow from login to attendance tracking while storing records securely in a MySQL database.
+
+---
 
 ## ✨ Features
 
-* Secure Login Page
-* Username and Password Authentication
-* Dashboard Interface
-* Mark Attendance Functionality
-* Attendance History Display
-* Automatic Attendance Record Storage
-* Easy Navigation Between Pages
-* Simple and User-Friendly Design
+* 🔐 Secure Login Authentication
+* 👤 Username & Password Verification
+* 📊 Student Dashboard
+* ✅ Mark Attendance
+* 📅 View Attendance History
+* 💾 Automatic Attendance Storage in MySQL
+* 🎯 Simple & Responsive User Interface
+* 🔄 Easy Navigation Between Pages
+
+---
 
 ## 🖥️ Application Flow
 
-1. User opens the Login Page.
-2. User enters Username and Password.
-3. After successful login, the Dashboard is displayed.
-4. User clicks **Mark Attendance**.
-5. Attendance is recorded and stored in the database.
-6. User can view the attendance record in the **History Page**.
-7. User can navigate back to the Login Page and continue using the system.
+1. Open the Login page.
+2. Enter a valid username and password.
+3. Access the Dashboard after successful authentication.
+4. Click **Mark Attendance**.
+5. Attendance is stored in the MySQL database.
+6. View previous attendance records on the **Attendance History** page.
+7. Log out or return to the Login page.
+
+---
 
 ## 🛠️ Technologies Used
 
 ### Frontend
 
-* HTML
-* CSS
+* HTML5
+* CSS3
 * JavaScript
 
 ### Backend
@@ -44,52 +52,85 @@ The Student Attendance System is designed to manage and record student attendanc
 
 * MySQL
 
+---
+
 ## 📂 Project Structure
 
+```text
 Student-Attendance-System/
-
+│
 ├── login.html
-
-├── style.css
-
 ├── dashboard.html
-
 ├── attendance.html
-
 ├── attendance-history.html
+├── style.css
+├── server.js
+├── package.json
+└── README.md
+```
 
-└── server.js
-
-├── README.md
+---
 
 ## ⚙️ Installation
 
-1. Clone the repository.
-2. Open the project folder.
-3. Install dependencies using:
+1. Clone the repository:
 
+```bash
+git clone <repository-url>
+```
+
+2. Navigate to the project folder:
+
+```bash
+cd Student-Attendance-System
+```
+
+3. Install dependencies:
+
+```bash
 npm install
+```
 
-4. Configure MySQL database connection.
+4. Configure your MySQL database connection in `server.js`.
+
 5. Start the server:
 
+```bash
 node server.js
+```
 
-6. Open the application in your browser:
+6. Open your browser and visit:
 
+```text
 http://localhost:3000
+```
+
+---
+
+## 🚀 Live Demo
+
+🔗 **Live Application**
+
+https://student-attendance-system-production-987f.up.railway.app
+
+---
 
 ## 🚀 Future Enhancements
 
-* Student Registration
+* Student Registration Module
 * Admin Dashboard
 * Attendance Reports
-* Export Attendance Data
-* Search and Filter Options
+* Export Attendance Data (PDF/Excel)
+* Search & Filter Attendance Records
+* Password Encryption
+* Role-Based Authentication
+
+---
 
 Live demo
 🔗 Live Demo: https://student-attendance-system-production-987f.up.railway.app
 
 ## 👩‍💻 Author
 
-Yashika
+Yashika Shanmugam
+Sangavi
