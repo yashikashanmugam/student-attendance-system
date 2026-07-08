@@ -132,5 +132,4 @@ Live demo
 
 ## 👩‍💻 Author
 
-1.Yashika Shanmugam
-2.Sangavi
+Yashika Shanmugam & Sangavi S
