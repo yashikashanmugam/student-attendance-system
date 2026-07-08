@@ -132,5 +132,5 @@ Live demo
 
 ## 👩‍💻 Author
 
-Yashika Shanmugam
-Sangavi
+1.Yashika Shanmugam
+2.Sangavi
