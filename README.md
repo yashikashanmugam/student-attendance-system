@@ -125,4 +125,4 @@ https://student-attendance-system-production-987f.up.railway.app
 
 ## 👩‍💻 Author
 
-Yashika Shanmugam & Sangavi S
+Yashika Shanmugam
